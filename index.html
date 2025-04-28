@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CABANAS E DEL RIO ADVOGADOS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ESTILOS GERAIS */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            color: #1c2a48;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #1c2a48;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+        }
+        
+        .logo {
+            flex: 0 0 auto;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .firm-name {
+            color: #D4AF37;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: #D4AF37;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #b8912a;
+        }
+        
+        .whatsapp-cta {
+            background-color: #25D366;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-cta:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(28, 42, 72, 0.8), rgba(28, 42, 72, 0.8)), 
+                        url('https://i.postimg.cc/kgQCvhyr/image.png') no-repeat center center/cover;
+            color: #fff;
+            padding: 150px 0;
+            text-align: center;
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .hero .especialidades {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #D4AF37;
+            font-weight: 300;
+        }
+        
+        .hero .atuacao-texto {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #fff;
+            line-height: 1.8;
+        }
+        
+        .hero .btn-hero {
+            background-color: #D4AF37;
+            color: #1c2a48;
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid #D4AF37;
+        }
+        
+        .hero .btn-hero:hover {
+            background-color: transparent;
+            color: #D4AF37;
+        }
+
+        /* SEÇÃO DE DESTAQUES */
+        .destaque-secao {
+            background: linear-gradient(rgba(249, 249, 249, 0.9), rgba(249, 249, 249, 0.9)),
+                        url('https://i.postimg.cc/CKX1mCLT/footer-img.jpg') no-repeat center center/cover;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .previdenciario-destaque {
+            background-color: #e9ecef;
+            color: #333;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .plantao-criminal-destaque {
+            background-color: #1c2a48;
+            color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .previdenciario-destaque h3, 
+        .plantao-criminal-destaque h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .plantao-criminal-destaque h3 {
+            color: #fff;
+        }
+
+        .cta-quadrado {
+            background-color: #D4AF37;
+            color: #1c2a48;
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid #D4AF37;
+        }
+
+        .plantao-criminal-destaque .cta-quadrado {
+            background-color: #fff;
+            color: #1c2a48;
+            border: 2px solid #fff;
+        }
+
+        .cta-quadrado:hover {
+            background-color: transparent;
+            color: #D4AF37;
+        }
+
+        .plantao-criminal-destaque .cta-quadrado:hover {
+            color: #fff;
+        }
+
+        /* ÁREAS DE ATUAÇÃO */
+        .areas-atuacao {
+            background: linear-gradient(rgba(249, 249, 249, 0.9), rgba(249, 249, 249, 0.9)),
+                        url('https://i.postimg.cc/CKX1mCLT/footer-img.jpg') no-repeat center center/cover;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .area-item {
+            background-color: #f9f9f9;
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .area-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #D4AF37;
+        }
+
+        .area-icon {
+            font-size: 2.5rem;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .area-item h3 {
+            color: #1c2a48;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* PORQUE ESCOLHER */
+        .porque-escolher {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            background-image: url('https://i.postimg.cc/kgQCvhyr/image.png');
+            background-attachment: fixed;
+            background-size: cover;
+            position: relative;
+        }
+
+        .porque-escolher::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255,255,255,0.9);
+        }
+
+        .porque-escolher .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .porque-escolher ul {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .porque-escolher li {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #D4AF37;
+            transition: all 0.3s ease;
+        }
+
+        .porque-escolher li:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .porque-escolher strong {
+            color: #1c2a48;
+        }
+
+        /* SEÇÃO CTA */
+        .cta {
+            background-color: #1c2a48;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            background-image: url('https://i.postimg.cc/kgQCvhyr/image.png');
+            background-size: cover;
+            position: relative;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(28, 42, 72, 0.8);
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            color: #f5f5f5; /* Branco perolado */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            margin-bottom: 30px;
+        }
+
+        .cta .button {
+            background-color: #D4AF37;
+            color: #1c2a48;
+            padding: 18px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid #D4AF37;
+        }
+
+        .cta .button:hover {
+            background-color: transparent;
+            color: #D4AF37;
+        }
+
+        /* FORMULÁRIO DE CONTATO */
+        .formulario-contato {
+            background-color: #fff;
+            padding: 80px 0;
+        }
+
+        .formulario-contato form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .formulario-contato label {
+            color: #1c2a48;
+            font-weight: bold;
+        }
+
+        .formulario-contato input,
+        .formulario-contato textarea,
+        .formulario-contato select {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+
+        .formulario-contato input:focus,
+        .formulario-contato textarea:focus,
+        .formulario-contato select:focus {
+            outline: none;
+            border-color: #D4AF37;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .formulario-contato textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .formulario-contato button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .formulario-contato button:hover {
+            background-color: #237dbd;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1c2a48;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .footer-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-contato a {
+            color: #D4AF37;
+            text-decoration: none;
+        }
+
+        .footer-contato a:hover {
+            text-decoration: underline;
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 15px;
+        }
+
+        .redes-sociais a {
+            color: #fff;
+            background-color: #D4AF37;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .redes-sociais a:hover {
+            background-color: #b8912a;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        /* BOTÃO FLUTUANTE DO WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float::after {
+            content: "Fale conosco";
+            position: absolute;
+            width: 120px;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #25d366;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover::after {
+            opacity: 1;
+            right: 75px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .firm-name {
+                font-size: 1.1rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .logo {
+                order: 1;
+                margin-right: auto;
+            }
+            
+            .firm-name {
+                position: static;
+                transform: none;
+                order: 3;
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+            
+            .nav-links {
+                order: 2;
+                margin-left: auto;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .whatsapp-cta {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 100px 0;
+                min-height: 50vh;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero .especialidades {
+                font-size: 1.2rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+                bottom: 30px;
+                right: 20px;
+            }
+
+            .whatsapp-float::after {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .firm-name {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .btn-hero {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            .previdenciario-destaque,
+            .plantao-criminal-destaque {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://i.postimg.cc/kBnyB3tC/ICONE-VERS-01-PRETO-PB-ICONE-VERS-01-BRANCO-1.png" 
+                     alt="CABANAS E DEL RIO ADVOGADOS" class="logo-img">
+            </div>
+            
+            <h1 class="firm-name">CABANAS E DEL RIO ADVOGADOS</h1>
+            
+            <div class="nav-links">
+                <a href="#atuacao">Atuação</a>
+                <a href="#sobre">Sobre</a>
+                <a href="https://wa.me/5522992841029" class="whatsapp-cta">
+                    <i class="fab fa-whatsapp"></i> ENTRE EM CONTATO
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>CABANAS E DEL RIO ADVOGADOS</h1>
+            <p class="especialidades">Especialistas em Direito Criminal, Previdenciário e Trabalhista</p>
+            <p class="atuacao-texto">Atuamos com excelência e comprometimento para defender seus direitos e oferecer soluções jurídicas personalizadas.</p>
+            <a href="#contato" class="btn-hero">Fale com um Especialista</a>
+        </div>
+    </section>
+
+    <section class="destaque-secao">
+        <div class="container">
+            <h2>Nossos Destaques</h2>
+            <div class="previdenciario-destaque">
+                <h3>Direito Previdenciário</h3>
+                <p><strong>Descontos inesperados no seu benefício previdenciário?</strong> Você pode ter direito à recuperação desses valores! Consulte-nos para uma análise gratuita.</p>
+                <div class="cta-quadrado">
+                    <a href="#contato" class="button">Análise Gratuita</a>
+                </div>
+            </div>
+            
+            <div class="plantao-criminal-destaque">
+                <h3>Plantão Criminal 24h</h3>
+                <p><strong>Emergência Criminal?</strong> Plantão 24 horas para defesa imediata. Conte com nossa agilidade e experiência em momentos cruciais.</p>
+                <div class="cta-quadrado">
+                    <a href="#contato" class="button">Ligue Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="atuacao" class="areas-atuacao">
+        <div class="container">
+            <h2>Nossa Expertise</h2>
+            <ul class="areas-grid">
+                <li class="area-item">
+                    <span class="area-icon"><i class="fas fa-gavel"></i></span>
+                    <h3>Direito Criminal</h3>
+                    <p>Defesa em inquéritos e processos criminais, acompanhamento em delegacias e audiências.</p>
+                </li>
+                <li class="area-item">
+                    <span class="area-icon"><i class="fas fa-shopping-cart"></i></span>
+                    <h3>Direito do Consumidor</h3>
+                    <p>Defesa contra práticas abusivas, indenizações e problemas com produtos ou serviços.</p>
+                </li>
+                <li class="area-item">
+                    <span class="area-icon"><i class="fas fa-balance-scale"></i></span>
+                    <h3>Direito Civil</h3>
+                    <p>Contratos, imobiliário, responsabilidade civil, direito de família e sucessões.</p>
+                </li>
+                <li class="area-item">
+                    <span class="area-icon"><i class="fas fa-user-shield"></i></span>
+                    <h3>Direito Previdenciário</h3>
+                    <p>Aposentações, pensões, auxílios, revisões de benefícios e planejamento previdenciário.</p>
+                </li>
+                <li class="area-item">
+                    <span class="area-icon"><i class="fas fa-briefcase"></i></span>
+                    <h3>Direito do Trabalho</h3>
+                    <p>Reclamações trabalhistas, rescisões contratuais, assédio moral e direitos do trabalhador.</p>
+                </li>
+                <li class="area-item">
+                    <span class="area-icon"><i class="fas fa-ellipsis-h"></i></span>
+                    <h3>Outras Áreas</h3>
+                    <p>Consulte-nos sobre suas necessidades específicas.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="sobre" class="porque-escolher">
+        <div class="container">
+            <h2>CABANAS E DEL RIO – SOLUÇÕES JURÍDICAS COM EXCELÊNCIA!</h2>
+            <p>Atuamos com estratégia, eficiência e comprometimento, oferecendo suporte jurídico especializado para garantir os melhores resultados para nossos clientes.</p>
+            <ul>
+                <li><strong>Expertise Especializada:</strong> Advogados com profundo conhecimento nas áreas Criminal, Consumidor, Civil, Previdenciário e Trabalhista.</li>
+                <li><strong>Atendimento Personalizado:</strong> Dedicação em entender suas necessidades e buscar a melhor solução jurídica para o seu caso.</li>
+                <li><strong>Compromisso com a Justiça:</strong> Defendemos seus direitos com ética, transparência e um forte senso de justiça.</li>
+                <li><strong>Comunicação Eficaz:</strong> Mantemos você informado sobre o andamento do seu caso de forma clara e acessível.</li>
+                <li><strong>Análise Detalhada:</strong> Avaliamos cada caso minuciosamente para identificar as melhores estratégias de atuação.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Dê o Próximo Passo para Solucionar Sua Questão Legal</h2>
+            <a href="#contato" class="button">Entre em Contato Conosco</a>
+        </div>
+    </section>
+
+    <section id="contato" class="formulario-contato">
+        <div class="container">
+            <h2>Agende sua Consulta</h2>
+            <form action="https://formsubmit.co/thaguiar.corp@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Novo contato - CABANAS & DEL RIO">
+                <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Consulta Jurídica">Consulta Jurídica</option>
+                        <option value="Direito Criminal">Direito Criminal</option>
+                        <option value="Direito Previdenciário">Direito Previdenciário</option>
+                        <option value="Direito do Trabalho">Direito do Trabalho</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="https://i.postimg.cc/kBnyB3tC/ICONE-VERS-01-PRETO-PB-ICONE-VERS-01-BRANCO-1.png" 
+                         alt="CABANAS E DEL RIO ADVOGADOS">
+                </div>
+                
+                <div class="footer-contato">
+                    <h3>Contato</h3>
+                    <a href="mailto:thaguiar.corp@gmail.com">thaguiar.corp@gmail.com</a>
+                    <a href="tel:+5522992841029">(22) 99284-1029</a>
+                    <p>Endereço: Av. Alcebíades Sabino Santos, 353, Sala 211, Atlântico, Rio das Ostras 28895-658.</p>
+                </div>
+                
+                <div class="redes-sociais">
+                    <a href="https://www.instagram.com/cabanasedelrioadvogados/" aria-label="Instagram" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 CABANAS E DEL RIO ADVOGADOS. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5522992841029" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
